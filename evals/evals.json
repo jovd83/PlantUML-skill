@@ -1,0 +1,26 @@
+{
+  "skill_name": "plantuml-skill",
+  "evals": [
+    {
+      "id": 1,
+      "name": "Auth Sequence",
+      "prompt": "Draw a sequence diagram for a multi-service authentication flow involving an API Gateway, an OIDC Provider, and a User Service. Include token refresh logic and error handling.",
+      "expected_output": "A valid PlantUML sequence diagram using premium theme, showing interaction between Gateway, OIDC, and Service.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "C4 Architecture",
+      "prompt": "Visualize a high-level C4 Container diagram for a banking system with a Web App, a Database, and an External API. Use the C4 standard library.",
+      "expected_output": "A C4 Container diagram using !include C4_Container.puml and showing the banking components.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "State Machine",
+      "prompt": "Model the state of a smart home thermostat, including states for Idle, Heating, and Cooling, with transitions triggered by temperature thresholds.",
+      "expected_output": "A valid state diagram showing transitions between temperature modes.",
+      "files": []
+    }
+  ]
+}

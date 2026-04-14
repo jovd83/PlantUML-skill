@@ -1,0 +1,28 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Order Processing Activity
+
+|Customer|
+start
+:Browse Catalog;
+:Select Items;
+:Checkout;
+
+|#F7768E|Payment System|
+:Authorize Credit Card;
+if (Authorized?) then (yes)
+  :Generate Transaction;
+else (no)
+  :Display Error;
+  stop
+endif
+
+|#7AA2F7|Warehouse|
+:Pick Items;
+:Pack Order;
+:Ship Order;
+
+|Customer|
+:Receive Order;
+stop
+@enduml

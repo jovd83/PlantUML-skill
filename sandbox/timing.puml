@@ -1,0 +1,23 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Real-time Signal Timing
+
+robust "Sensor Data" as S
+concise "Alarm State" as A
+
+@0
+S is Idle
+A is Locked
+
+@100
+S is Reading
+A is Locked
+
+@200
+S is Alert
+A is Triggered
+
+@500
+S is Idle
+A is Reset
+@enduml

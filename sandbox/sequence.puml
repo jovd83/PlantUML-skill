@@ -1,0 +1,26 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Checkout & Payment Flow
+
+actor Customer
+participant "Web UI" as UI << (S,#7aa2f7) >>
+participant "Order Service" as Order
+participant "Payment Engine" as Pay
+database "Order DB" as DB
+
+Customer -> UI : Click 'Confirm Order'
+activate UI
+UI -> Order : Create Order (items, user)
+activate Order
+Order -> DB : Store 'PENDING' Order
+Order -> Pay : Initiate Payment
+activate Pay
+Pay -> Pay : Validate Credit Card
+Pay -->> Order : Payment Success (txn_id)
+deactivate Pay
+Order -> DB : Update Order 'PAID'
+Order -->> UI : Order Successful
+deactivate Order
+UI -> Customer : Display Confirmation
+deactivate UI
+@enduml

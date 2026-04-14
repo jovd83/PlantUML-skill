@@ -1,0 +1,18 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include ../../../../../assets/premium-theme.puml
+
+title C4 Container Diagram - Banking System
+
+Person(customer, "Banking Customer", "A customer of the bank, with personal bank accounts.")
+System_Boundary(c1, "Banking System") {
+    Container(web_app, "Web Application", "React, TypeScript", "Delivers the static content and the Internet banking SPA.")
+    ContainerDb(database, "Database", "PostgreSQL", "Stores user registration information, hashed auth credentials, access logs, etc.")
+}
+
+System_Ext(external_api, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Rel(customer, web_app, "Uses", "HTTPS")
+Rel(web_app, database, "Reads from and writes to", "JDBC")
+Rel(web_app, external_api, "Uses", "XML/HTTPS")
+@enduml

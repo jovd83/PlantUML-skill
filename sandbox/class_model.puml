@@ -1,0 +1,36 @@
+@startuml
+!include ../assets/premium-theme.puml
+title E-commerce Domain Model
+
+class Product {
+    - String id
+    - String name
+    - Money price
+    + updateStock()
+}
+
+class Category {
+    - String name
+}
+
+class User {
+    - String email
+    - Address billingAddress
+}
+
+class Order {
+    - Date createdAt
+    - Status status
+    + calculateTotal()
+}
+
+class OrderItem {
+    - int quantity
+    - Money unitPrice
+}
+
+Product "*" -- "1" Category : belongs to
+User "1" -- "*" Order : places
+Order "1" *-- "*" OrderItem : contains
+OrderItem "*" -- "1" Product : references
+@enduml

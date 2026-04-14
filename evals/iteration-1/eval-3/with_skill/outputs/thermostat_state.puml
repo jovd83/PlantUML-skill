@@ -1,0 +1,24 @@
+@startuml
+!include ../../../../../assets/premium-theme.puml
+title Smart Thermostat State Machine
+
+[*] --> Idle
+
+state Idle {
+    [*] --> Monitoring
+}
+
+Idle --> Heating : Temp < Threshold - 1
+Idle --> Cooling : Temp > Threshold + 1
+
+Heating --> Idle : Temp >= Threshold
+Cooling --> Idle : Temp <= Threshold
+
+state Heating #f7768e {
+    [*] --> BurnerOn
+}
+
+state Cooling #7aa2f7 {
+    [*] --> CompressorOn
+}
+@enduml

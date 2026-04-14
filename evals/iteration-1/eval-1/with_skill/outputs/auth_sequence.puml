@@ -1,0 +1,29 @@
+@startuml
+!include ../../../../../assets/premium-theme.puml
+title Auth & Token Refresh Flow
+
+actor User
+participant "API Gateway" as Gateway << (G,#7aa2f7) >>
+participant "OIDC Provider" as OIDC << (O,#bb9af7) >>
+participant "User Service" as Service << (S,#9ece6a) >>
+
+User -> Gateway : Request with Access Token
+activate Gateway
+Gateway -> Gateway : Validate Token
+alt Token Valid
+    Gateway -> Service : Forward Request
+    Service -->> User : Success
+else Token Expired
+    Gateway -->> User : 401 Unauthorized
+    User -> OIDC : Refresh Token Request
+    activate OIDC
+    alt Refresh Success
+        OIDC -->> User : New Access Token
+        User -> Gateway : Retry Request with New Token
+    else Refresh Failed
+        OIDC -->> User : Login Required (Error)
+    end
+    deactivate OIDC
+end
+deactivate Gateway
+@enduml

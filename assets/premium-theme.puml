@@ -1,0 +1,49 @@
+' Premium Tokyonight Theme for PlantUML
+' High contrast, professional color palette
+
+skinparam backgroundcolor transparent
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI", "Inter", "SansSerif"
+skinparam defaultFontSize 12
+skinparam dpi 300
+
+' Colors
+!define PRIMARY #7aa2f7
+!define SECONDARY #bb9af7
+!define SUCCESS #9ece6a
+!define DANGER #f7768e
+!define BG_DARK #1a1b26
+!define BORDER #414868
+!define TEXT #c0caf5
+
+skinparam sequence {
+    ArrowColor PRIMARY
+    LifeLineBorderColor SECONDARY
+    ParticipantBackgroundColor BG_DARK
+    ParticipantBorderColor BORDER
+    ParticipantFontColor TEXT
+    ActorBackgroundColor DANGER
+    ActorBorderColor DANGER
+    ActorFontColor TEXT
+}
+
+skinparam class {
+    BackgroundColor BG_DARK
+    BorderColor BORDER
+    HeaderBackgroundColor #24283b
+    ArrowColor PRIMARY
+    FontColor TEXT
+}
+
+skinparam component {
+    BackgroundColor BG_DARK
+    BorderColor PRIMARY
+    FontColor TEXT
+}
+
+skinparam note {
+    BackgroundColor #e0af68
+    BorderColor #e0af68
+    FontColor BG_DARK
+}

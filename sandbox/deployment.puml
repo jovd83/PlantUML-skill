@@ -1,0 +1,22 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Infrastructure Deployment
+
+node "AWS Cloud" {
+    node "EC2 Cluster" as EC2 {
+        component "Order Service"
+        component "User Service"
+    }
+    
+    node "RDS Instance" as RDS << Database >> {
+        database "Postgres"
+    }
+}
+
+node "Client Device" {
+    [Web Browser] as Browser
+}
+
+Browser -- EC2 : HTTPS
+EC2 -- RDS : JDBC
+@enduml

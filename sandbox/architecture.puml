@@ -1,0 +1,26 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Microservices Component Architecture
+
+package "Frontend" {
+  [React Web App] as Web
+  [Mobile App] as Mobile
+}
+
+package "API Layer" {
+  [API Gateway] as Gateway
+}
+
+package "Core Services" {
+  [Auth Service] as Auth
+  [Order Service] as Order
+  [Inventory Service] as Inv
+}
+
+Web --> Gateway : REST
+Mobile --> Gateway : REST
+
+Gateway --> Auth : JWT Verify
+Gateway --> Order : Dispatch
+Order --> Inv : gRPC Check Stock
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+!include assets/premium-theme.puml
+title Test Rendering
+User -> Assistant : Is it working?
+Assistant -> User : Yes, it is!
+@enduml

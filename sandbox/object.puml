@@ -1,0 +1,22 @@
+@startuml
+!include ../assets/premium-theme.puml
+title System Snapshot (Object Diagram)
+
+object "currentOrder : Order" as O1 {
+    id = "ORD-99"
+    total = 450.00
+}
+
+object "blueShirt : Product" as P1 {
+    name = "Blue T-Shirt"
+    sku = "TSH-01"
+}
+
+object "redShirt : Product" as P2 {
+    name = "Red T-Shirt"
+    sku = "TSH-02"
+}
+
+O1 .. P1 : contains
+O1 .. P2 : contains
+@enduml

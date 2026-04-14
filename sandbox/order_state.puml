@@ -1,0 +1,18 @@
+@startuml
+!include ../assets/premium-theme.puml
+title Order Fulfillment Lifecycle
+
+[*] --> Created
+Created --> Paid : Payment Received
+Created --> Cancelled : User Abort
+
+Paid --> Processing : Validation Pass
+Paid --> Refunded : Validation Fail
+
+Processing --> Shipped : Carrier Assigned
+Shipped --> Delivered : Proof of Delivery
+
+Delivered --> [*]
+Cancelled --> [*]
+Refunded --> [*]
+@enduml

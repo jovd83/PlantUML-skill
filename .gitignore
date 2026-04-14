@@ -12,4 +12,4 @@ Thumbs.db
 # Project Specific
 assets/plantuml.jar
 evals/runs/
-output/
+/output/

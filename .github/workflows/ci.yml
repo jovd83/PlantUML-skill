@@ -1,0 +1,27 @@
+name: Validate Skill
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          
+      - name: Run Structure Validation
+        run: python scripts/quick_validate.py .
+        
+      - name: Verify Documentation Links
+        run: |
+          # Simple check to ensure docs are referenced in README
+          grep -q "docs/syntax-guide.md" README.md || (echo "README missing link to syntax-guide" && exit 1)
+          grep -q "docs/troubleshooting.md" README.md || (echo "README missing link to troubleshooting" && exit 1)

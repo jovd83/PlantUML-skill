@@ -13,15 +13,12 @@
 - **Contract-Driven**: Explicit Input/Output JSON schemas in [SKILL.md](SKILL.md).
 - **Self-Healing**: Autonomous provisioning via [scripts/render.py](scripts/render.py).
 - **Premium Aesthetics**: Built-in "Tokyonight" theme for consistent output.
-- **CI Validated**: Automated structural and documentation checks via GitHub Actions.
+- **CI Validated**: Automated structural checks via GitHub Actions.
 
 ## 🛠 Prerequisites
 The skill features a **self-healing setup script**, but generally requires:
 1.  **Java (JRE 8+):** Required to run the PlantUML core.
 2.  **Graphviz (dot):** Required for all structural diagrams (Class, Use Case, etc.).
-3.  **Python 3.x:** To run the automation wrapper.
-
-_Note: The skill will attempt to install these automatically via `winget`, `brew`, or `apt` if they are missing._
 
 ## 📥 Installation
 ```bash
@@ -31,44 +28,36 @@ npx skills add https://github.com/jovd83/PlantUML-skill --skill plantuml-skill
 ## 🎨 Visual UML Gallery
 
 ### 1. Sequence Diagram
-Best for: API flows, user interactions, and message passing.
-![Sequence](sandbox/output/sequence.png)
+<img src="sandbox/output/sequence.png" width="600" alt="Sequence">
 
 ### 2. Use Case Diagram
-Best for: Mapping system boundaries and actor responsibilities.
-![Use Case](sandbox/output/use_case.png)
+<img src="sandbox/output/use_case.png" width="600" alt="Use Case">
 
 ### 3. Class Diagram (Domain Model)
-Best for: Structural data modeling and object relationships.
-![Class](sandbox/output/class_model.png)
+<img src="sandbox/output/class_model.png" width="600" alt="Class">
 
 ### 4. Activity Diagram
-Best for: Business processes and complex logic flows with swimlanes.
-![Activity](sandbox/output/activity.png)
+<img src="sandbox/output/activity.png" width="600" alt="Activity">
 
 ### 5. C4 Container Diagram
-Best for: High-level software architecture and container boundaries.
-![C4 Architecture](evals/iteration-1/eval-2/with_skill/outputs/banking_c4.png)
+<img src="evals/iteration-1/eval-2/with_skill/outputs/banking_c4.png" width="600" alt="C4 Architecture">
 
 ### 6. State Machine
-Best for: Object lifecycles and application state management.
-![State](sandbox/output/order_state.png)
+<img src="sandbox/output/order_state.png" width="600" alt="State">
 
 ### 7. Deployment Diagram
-Best for: Physical infrastructure and network topology.
-![Deployment](sandbox/output/deployment.png)
+<img src="sandbox/output/deployment.png" width="600" alt="Deployment">
 
 ### 8. Component Diagram
-Best for: Microservices architecture and internal system modules.
-![Component](sandbox/output/architecture.png)
+<img src="sandbox/output/architecture.png" width="600" alt="Component">
 
 ### 9. Object Diagram
-Best for: Dynamic snapshots of system states.
-![Object](sandbox/output/object.png)
+<img src="sandbox/output/object.png" width="600" alt="Object">
 
 ### 10. Timing Diagram
-Best for: Real-time signal processing and hardware timing.
-![Timing](sandbox/output/timing.png)
+<img src="sandbox/output/timing.png" width="600" alt="Timing">
+
+---
 
 ## 📚 Documentation & Support
 - [Syntax Guide](docs/syntax-guide.md): Standard notation and C4 library URLs.

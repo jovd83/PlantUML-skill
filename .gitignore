@@ -11,7 +11,5 @@ Thumbs.db
 
 # Project Specific
 assets/plantuml.jar
-sandbox/output/*.png
-sandbox/output/*.svg
 evals/runs/
 output/

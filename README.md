@@ -1,70 +1,88 @@
-# PlantUML Professional Skill (v2.0)
+# PlantUML Skill
 
-[![Validate Skill](https://github.com/jovd83/PlantUML-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/jovd83/PlantUML-skill/actions/workflows/ci.yml)
-[![version](https://img.shields.io/badge/version-2.0.0-orange)](CHANGELOG.md)
+[![Validate Skills](https://github.com/jovd83/plantuml-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/jovd83/plantuml-skill/actions/workflows/ci.yml)
+[![version](https://img.shields.io/badge/version-2.0.0-blue)](CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Maintenance](https://img.shields.io/badge/maintenance-v2.0--flagship-blueviolet)](CONTRIBUTING.md)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
 
 ## 📖 Overview
-`plantuml-skill` is an enterprise-grade agentic engine for rendering professional PlantUML and C4 diagrams. It enables high-fidelity "Diagrams as Code" with modern aesthetics and autonomous dependency management.
 
-## 🌟 Key Features (v2.0)
-- **Contract-Driven**: Explicit Input/Output JSON schemas in [SKILL.md](SKILL.md).
-- **Self-Healing**: Autonomous provisioning via [scripts/render.py](scripts/render.py).
-- **Premium Aesthetics**: Built-in "Tokyonight" theme for consistent output.
-- **CI Validated**: Automated structural checks via GitHub Actions.
+`plantuml-skill` is a professional "Diagrams as Code" tool for AI agents and developers. It allows you to write, render, and export high-fidelity PlantUML diagrams with a curated, modern aesthetic.
+
+Unlike basic diagram tools, this skill is optimized for **Software Architecture (C4 Model)**, complex system flows, and state machines, ensuring your documentation looks premium and technically accurate.
+
+## 🚀 When to use this skill
+
+- **System Design:** Visualizing microservices, database schemas, and infrastructure.
+- **Process Mapping:** Documenting complex business logic, user journeys, or API authentication flows.
+- **Architecture Reviews:** Creating C4 diagrams for technical design documents.
+- **Legacy Documentation:** Turning source code or logs into readable sequence diagrams.
+- **Education:** Generating clean visual aids for complex algorithms or lifecycles.
 
 ## 🛠 Prerequisites
+
 The skill features a **self-healing setup script**, but generally requires:
-1.  **Java (JRE 8+):** Required to run the PlantUML core.
+
+1.  **Java (JRE 8+):** Required to run the PlantUML engine.
 2.  **Graphviz (dot):** Required for all structural diagrams (Class, Use Case, etc.).
+3.  **Python 3.x:** To run the `render.py` automation wrapper.
+
+_Note: The skill will attempt to install these automatically via `winget`, `brew`, or `apt` if they are missing._
 
 ## 📥 Installation
+
 ```bash
-npx skills add https://github.com/jovd83/PlantUML-skill --skill plantuml-skill
+npx skills add https://github.com/jovd83/plantuml-skill --skill plantuml-skill
 ```
 
 ## 🎨 Visual UML Gallery
 
 ### 1. Sequence Diagram
-<img src="sandbox/output/sequence.png" width="600" alt="Sequence">
+
+Best for: API flows, user interactions, and message passing.
+![Sequence](sandbox/output/sequence.png)
 
 ### 2. Use Case Diagram
-<img src="sandbox/output/use_case.png" width="600" alt="Use Case">
+
+Best for: Mapping system boundaries and actor responsibilities.
+![Use Case](sandbox/output/use_case.png)
 
 ### 3. Class Diagram (Domain Model)
-<img src="sandbox/output/class_model.png" width="600" alt="Class">
+
+Best for: Structural data modeling and object relationships.
+![Class](sandbox/output/class_model.png)
 
 ### 4. Activity Diagram
-<img src="sandbox/output/activity.png" width="600" alt="Activity">
+
+Best for: Business processes and complex logic flows with swimlanes.
+![Activity](sandbox/output/activity.png)
 
 ### 5. C4 Container Diagram
-<img src="evals/iteration-1/eval-2/with_skill/outputs/banking_c4.png" width="600" alt="C4 Architecture">
+
+Best for: High-level software architecture and container boundaries.
+![C4 Architecture](evals/iteration-1/eval-2/with_skill/outputs/banking_c4.png)
 
 ### 6. State Machine
-<img src="sandbox/output/order_state.png" width="600" alt="State">
+
+Best for: Object lifecycles and application state management.
+![State](sandbox/output/order_state.png)
 
 ### 7. Deployment Diagram
-<img src="sandbox/output/deployment.png" width="600" alt="Deployment">
+
+Best for: Physical infrastructure and network topology.
+![Deployment](sandbox/output/deployment.png)
 
 ### 8. Component Diagram
-<img src="sandbox/output/architecture.png" width="600" alt="Component">
+
+Best for: Microservices architecture and internal system modules.
+![Component](sandbox/output/architecture.png)
 
 ### 9. Object Diagram
-<img src="sandbox/output/object.png" width="600" alt="Object">
+
+Best for: Dynamic snapshots of system states at a specific point in time.
+![Object](sandbox/output/object.png)
 
 ### 10. Timing Diagram
-<img src="sandbox/output/timing.png" width="600" alt="Timing">
 
----
-
-## 📚 Documentation & Support
-- [Syntax Guide](docs/syntax-guide.md): Standard notation and C4 library URLs.
-- [Troubleshooting](docs/troubleshooting.md): Recovery steps for environment issues.
-- [Changelog](CHANGELOG.md): Project evolution and version history.
-- [Contributing](CONTRIBUTING.md): Guidelines for extending the skill.
-
----
-
-**Developed for the AgentSkills.io Ecosystem.**
+Best for: Real-time signal processing and hardware timing.
+![Timing](sandbox/output/timing.png)

@@ -4,16 +4,16 @@ description: "Enterprise-grade engine for rendering professional PlantUML and C4
 metadata:
     dispatcher-layer: execution
     dispatcher-lifecycle: active
-  version: "2.2.0"
-  author: "jovd83"
-  dispatcher-output-artifacts: [plantuml_source, diagram_svg, diagram_png]
-  dispatcher-input-artifacts: [architecture_notes, requirement_spec, code_context]
-  dispatcher-capabilities: [puml-generation, architecture-visualization, automated-rendering]
-  dispatcher-risk: low
-  dispatcher-writes-files: true
-  dispatcher-stack-tags: [documentation, plantuml, architecture, automation]
-  dispatcher-accepted-intents: [generate_plantuml_diagram, visualize_puml_architecture, render_puml_source]
-  dispatcher-category: documentation
+    version: "2.2.0"
+    author: "jovd83"
+    dispatcher-output-artifacts: [plantuml_source, diagram_svg, diagram_png]
+    dispatcher-input-artifacts: [architecture_notes, requirement_spec, code_context]
+    dispatcher-capabilities: [puml-generation, architecture-visualization, automated-rendering]
+    dispatcher-risk: low
+    dispatcher-writes-files: true
+    dispatcher-stack-tags: [documentation, plantuml, architecture, automation]
+    dispatcher-accepted-intents: [generate_plantuml_diagram, visualize_puml_architecture, render_puml_source]
+    dispatcher-category: documentation
 ---
 
 # PlantUML Skill (v2.0)

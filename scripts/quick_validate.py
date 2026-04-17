@@ -41,19 +41,29 @@ def validate_skill_md(root: Path, reporter: Reporter):
     if not path.exists(): return
     
     content = path.read_text(encoding="utf-8")
-    if "version: \"2.0.0\"" in content:
-        reporter.ok("SKILL.md is v2.0 compliant")
+    
+    # Check for version 2.x.x
+    version_match = re.search(r'version:\s*"2\.\d+\.\d+"', content)
+    if version_match:
+        reporter.ok(f"SKILL.md is v2.x compliant (found {version_match.group(0)})")
     else:
-        reporter.fail("SKILL.md is missing v2.0 version string")
+        reporter.fail("SKILL.md is missing a valid v2.x version string")
 
     required_headers = ["## Mission", "## 🧠 Cognitive Process", "## 📋 Input Contract", "## 🛡 Safeguards"]
     for h in required_headers:
         if h in content:
-            reporter.ok(f"SKILL.md includes header: {h}")
+            # We use .encode().decode() trick or just avoid printing the emoji if needed, 
+            # but better to just handle the reporter output or skip printing the exact header if it contains emojis
+            reporter.ok(f"SKILL.md includes mandatory header: {h.split(' ')[0]} {h.split(' ')[-1]}")
         else:
             reporter.fail(f"SKILL.md missing critical header: {h}")
 
 def main():
+    # Force UTF-8 for stdout if possible
+    if sys.stdout.encoding != 'utf-8':
+        import io
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
     parser = argparse.ArgumentParser()
     parser.add_argument("path", nargs="?", default=".")
     args = parser.parse_args()

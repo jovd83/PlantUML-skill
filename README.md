@@ -1,7 +1,7 @@
 # PlantUML Skill
 
 [![Validate Skills](https://github.com/jovd83/plantuml-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/jovd83/plantuml-skill/actions/workflows/ci.yml)
-[![version](https://img.shields.io/badge/version-2.0.0-blue)](CHANGELOG.md)
+[![version](https://img.shields.io/badge/version-2.2.0-blue)](CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jovd83)
 
@@ -86,3 +86,10 @@ Best for: Dynamic snapshots of system states at a specific point in time.
 
 Best for: Real-time signal processing and hardware timing.
 ![Timing](sandbox/output/timing.png)
+
+## 📚 Documentation & Resources
+
+For detailed guides, please refer to:
+
+- [Syntax Guide](docs/syntax-guide.md): High-fidelity UML and C4 syntax patterns.
+- [Troubleshooting Guide](docs/troubleshooting.md): Common fixes for Java and Graphviz environments.

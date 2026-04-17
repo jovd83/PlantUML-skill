@@ -42,10 +42,10 @@ def validate_skill_md(root: Path, reporter: Reporter):
     
     content = path.read_text(encoding="utf-8")
     
-    # Check for version 2.x.x
-    version_match = re.search(r'version:\s*"2\.\d+\.\d+"', content)
+    # Check for version 2.x.x (allow optional quotes)
+    version_match = re.search(r'version:\s*["\']?(2\.\d+\.\d+)["\']?', content)
     if version_match:
-        reporter.ok(f"SKILL.md is v2.x compliant (found {version_match.group(0)})")
+        reporter.ok(f"SKILL.md is v2.x compliant (found {version_match.group(1)})")
     else:
         reporter.fail("SKILL.md is missing a valid v2.x version string")
 

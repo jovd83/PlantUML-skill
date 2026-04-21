@@ -2,7 +2,7 @@
 name: plantuml-skill
 description: Enterprise-grade engine for rendering professional PlantUML and C4 diagrams. Optimized for system architecture visualization, sequence flow modeling, and high-fidelity project documentation.
 metadata:
-  dispatcher-layer: execution
+  dispatcher-layer: information
   dispatcher-lifecycle: active
   version: "2.2.0"
   author: jovd83
